@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Digital Clock</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ffcc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    #clock {
+      font-size: 64px;
+      border: 4px solid #00ffcc;
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      color: #0f0f0f;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #00e6b8;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="clock">Click the button to start the clock</div>
+  <button onclick="startClock()">Start Clock</button>
+
+  <script>
+    function startClock() {
+      setInterval(() => {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById("clock").textContent = time;
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
